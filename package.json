@@ -1,0 +1,35 @@
+{
+	"name": "svelte-memo-app",
+	"private": true,
+	"version": "0.1.0",
+	"type": "module",
+	"scripts": {
+		"sv:dev": "vite dev",
+		"build": "vite build",
+		"clear": "rm -rf ./node_modules ./.svelte-kit",
+		"clean": "rm -rf ./node_modules ./.svelte-kit ./.wrangler",
+		"gen": "drizzle-kit generate --config=drizzle.config.ts",
+		"dev": "wrangler dev",
+		"push:local": "wrangler d1 migrations apply svelte-memo-app-localdb --local",
+		"push:remote": "wrangler d1 migrations apply svelte-memo-app-stagdb --remote",
+		"deploy": "wrangler deploy --env staging",
+		"all": "vite build && wrangler dev"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20250628.0",
+		"@sveltejs/adapter-cloudflare": "^7.0.4",
+		"@sveltejs/kit": "^2.22.2",
+		"@sveltejs/vite-plugin-svelte": "^5.1.0",
+		"@types/better-sqlite3": "^7.6.13",
+		"drizzle-kit": "^0.30.6",
+		"svelte": "^5.34.9",
+		"svelte-check": "^4.2.2",
+		"typescript": "^5.8.3",
+		"vite": "^6.3.5",
+		"wrangler": "^4.22.0"
+	},
+	"dependencies": {
+		"better-sqlite3": "^11.10.0",
+		"drizzle-orm": "^0.38.4"
+	}
+}
