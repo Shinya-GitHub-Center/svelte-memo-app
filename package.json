@@ -11,7 +11,7 @@
 		"gen": "drizzle-kit generate --config=drizzle.config.ts",
 		"dev": "wrangler dev",
 		"push:local": "wrangler d1 migrations apply svelte-memo-app-localdb --local",
-		"push:remote": "wrangler d1 migrations apply svelte-memo-app-stagdb --remote",
+		"push:remote": "wrangler d1 migrations apply svelte-memo-app-stagdb --remote --env staging",
 		"secret": "wrangler secret put $1 --env staging",
 		"deploy": "wrangler deploy --env staging",
 		"all": "vite build && wrangler dev"

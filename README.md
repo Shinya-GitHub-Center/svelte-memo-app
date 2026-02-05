@@ -60,8 +60,16 @@ svelte-memo-app/
 ## 本番環境と開発環境の違い
 - 開発環境はBasic認証なし
 - リモート本番環境の場合は（IS_PRODフラグが読み込める場合）、すべてのリクエストごとにBasic認証させる。
-- リモート環境へのシークレットキーの注入方法は`bun run secret <key_name>`で行う。
+- リモート環境へのシークレットキーの注入方法は`bun run secret <key_name>`で行う。（一度デプロイした後に行うこと）
 - 行うべきキーは`IS_PROD`（これの値は適当でよい）、`AUTH_USERNAME`、`AUTH_PASSWORD`の3つである。
+
+## デプロイフロー
+1. CloudflareにD1データベースを作成後、データベースIDをコピー
+2. `wrangler.toml`の該当箇所に上記データベースIDをペースト
+3. `bun run push:remote`
+4. `bun run build`
+5. `bun run deploy`
+6. シークレットキーの注入
 
 ## ライセンス
 
