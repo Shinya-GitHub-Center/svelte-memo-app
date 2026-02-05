@@ -4,6 +4,10 @@
 	let { data }: { data: PageData } = $props();
 </script>
 
+<svelte:head>
+	<title>Submit | Memo App</title>
+</svelte:head>
+
 <div class="card p-3">
 	<form method="POST" action="?/save">
 		<label class="label" for="body">本文:</label>

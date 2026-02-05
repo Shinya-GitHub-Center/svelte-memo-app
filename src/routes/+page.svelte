@@ -4,6 +4,10 @@
 	let { data }: { data: PageData } = $props();
 </script>
 
+<svelte:head>
+	<title>Memo App</title>
+</svelte:head>
+
 <div class="card p-3">
 	<div class="header-row">
 		<span>編集したいメモを選んで下さい</span>
