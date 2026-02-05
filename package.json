@@ -12,6 +12,7 @@
 		"dev": "wrangler dev",
 		"push:local": "wrangler d1 migrations apply svelte-memo-app-localdb --local",
 		"push:remote": "wrangler d1 migrations apply svelte-memo-app-stagdb --remote",
+		"secret": "wrangler secret put $1 --env staging",
 		"deploy": "wrangler deploy --env staging",
 		"all": "vite build && wrangler dev"
 	},
