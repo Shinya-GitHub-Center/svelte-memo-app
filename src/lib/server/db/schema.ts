@@ -9,4 +9,4 @@ export const memoItems = sqliteTable('memo_item', {
 		.default(sql`(unixepoch())`)
 });
 
-export type MemoItem = typeof memoItems.$inferSelect;
+export type MemoItems = typeof memoItems.$inferSelect;
