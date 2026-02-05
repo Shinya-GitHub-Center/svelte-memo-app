@@ -10,6 +10,9 @@ declare global {
 		interface Platform {
 			env?: {
 				DB?: D1Database;
+				IS_PROD?: string;
+				AUTH_USERNAME?: string;
+				AUTH_PASSWORD?: string;
 			};
 		}
 	}
